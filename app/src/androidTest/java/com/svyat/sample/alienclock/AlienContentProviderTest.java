@@ -16,7 +16,9 @@ import com.svyat.sample.alienclock.data.bloomchan.BloomchanDataModel;
 import org.junit.runner.RunWith;
 
 /**
- * Created by MAC on 09.07.16.
+ * Created by shromyak on 09.07.16.
+ *
+ * Tests for Content Provider
  */
 @RunWith(AndroidJUnit4.class)
 public class AlienContentProviderTest extends ProviderTestCase2<AlienContentProvider> {

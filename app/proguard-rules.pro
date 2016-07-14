@@ -22,3 +22,8 @@
 }
 -keepattributes Signature
 -keepattributes Exceptions
+-keepnames class * implements com.svyat.sample.alienclock.controller.AlienController
+-keepnames class * implements com.svyat.sample.alienclock.controller.AlienControlled
+-keepclassmembers class * implements com.svyat.sample.alienclock.content.AlienContentBrick {
+    @com.google.gson.annotations.Expose <fields>;
+}

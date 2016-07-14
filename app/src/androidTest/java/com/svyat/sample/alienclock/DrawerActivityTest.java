@@ -4,7 +4,9 @@ import android.test.ActivityInstrumentationTestCase2;
 import android.test.suitebuilder.annotation.SmallTest;
 
 /**
- * Created by MAC on 09.07.16.
+ * Created by shromyak on 09.07.16.
+ *
+ * Is activity able to create
  */
 public class DrawerActivityTest extends ActivityInstrumentationTestCase2<DrawerActivity> {
 

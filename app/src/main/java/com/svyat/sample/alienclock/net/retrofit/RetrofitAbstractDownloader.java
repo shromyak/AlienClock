@@ -14,6 +14,8 @@ import retrofit2.Retrofit;
 
 /**
  * Created by shromyak on 11.07.2016.
+ *
+ * Base downloader class
  */
 public abstract class RetrofitAbstractDownloader<T> {
 
@@ -100,7 +102,7 @@ public abstract class RetrofitAbstractDownloader<T> {
                 call = null;
             }
 
-            Log.e(getLogTag(), "Something went frong with request", e);
+            Log.e(getLogTag(), "Something went wrong with request", e);
         }
     }
 

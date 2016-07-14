@@ -12,6 +12,7 @@ import retrofit2.http.Headers;
 
 /**
  * Created by shromyak on 11.07.2016.
+ *
  */
 public class BloomchanDataIntegrator implements RetrofitDataIntegrator {
 
@@ -40,7 +41,7 @@ public class BloomchanDataIntegrator implements RetrofitDataIntegrator {
     //Retrofit doesn't allow inheritance of this interface from another interface (so all Generic types work through Reflexion)
     public interface DownloadRequestFactory {
         @Headers({
-                "Accept: application/xml",//,application/xhtml+xml,text/html
+                "Accept: application/xml",
                 "User-Agent: Retrofit"
         })
         @GET("/feeds/podcasts/etf_report.xml")

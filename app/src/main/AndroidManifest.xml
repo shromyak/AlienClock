@@ -51,6 +51,16 @@
             </intent-filter>
         </service>
 
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="com.svyat.sample.alienclock" />
+            </intent-filter>
+        </receiver>
+
         <receiver android:name=".appwidget.AlienAppWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />

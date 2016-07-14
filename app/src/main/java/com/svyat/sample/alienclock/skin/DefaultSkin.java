@@ -9,6 +9,8 @@ import com.svyat.sample.alienclock.media.DefaultAudioDecorator;
 
 /**
  * Created by shromyak on 07.07.2016.
+ *
+ * Default preset of common skin
  */
 public class DefaultSkin implements Skin {
 

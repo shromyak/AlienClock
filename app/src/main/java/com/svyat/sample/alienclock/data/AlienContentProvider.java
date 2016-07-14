@@ -9,6 +9,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Log;
@@ -22,6 +23,9 @@ import static com.svyat.sample.alienclock.data.bloomchan.BloomchanDataContract.T
 
 /**
  * Created by shromyak on 07.07.2016.
+ *
+ * Main persistence of this application
+ * At the moment contains only data for Bloomberg channel information
  */
 public class AlienContentProvider extends ContentProvider {
 
@@ -39,7 +43,7 @@ public class AlienContentProvider extends ContentProvider {
 
     @Nullable
     @Override
-    public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
+    public Cursor query(@NonNull Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
 
         int res = uriMatcher.match(uri);
 
@@ -68,7 +72,7 @@ public class AlienContentProvider extends ContentProvider {
 
     @Nullable
     @Override
-    public String getType(Uri uri) {
+    public String getType(@NonNull Uri uri) {
 
         final int res = uriMatcher.match(uri);
 
@@ -82,7 +86,7 @@ public class AlienContentProvider extends ContentProvider {
 
     @Nullable
     @Override
-    public Uri insert(Uri uri, ContentValues values) {
+    public Uri insert(@NonNull Uri uri, ContentValues values) {
 
         int res = uriMatcher.match(uri);
 
@@ -113,7 +117,7 @@ public class AlienContentProvider extends ContentProvider {
     }
 
     @Override
-    public int delete(Uri uri, String selection, String[] selectionArgs) {
+    public int delete(@NonNull Uri uri, String selection, String[] selectionArgs) {
 
         int res = uriMatcher.match(uri);
 
@@ -139,7 +143,7 @@ public class AlienContentProvider extends ContentProvider {
     }
 
     @Override
-    public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
+    public int update(@NonNull Uri uri, ContentValues values, String selection, String[] selectionArgs) {
 
         int res = uriMatcher.match(uri);
 
@@ -163,7 +167,7 @@ public class AlienContentProvider extends ContentProvider {
         }
     }
 
-    private static final String CREATE_TABLE_MESSAGEDATA = "CREATE TABLE bloomchan (_ID INTEGER PRIMARY KEY, created INTEGER, title TEXT, pubDate TEXT, link TEXT, enclosure TEXT, guid TEXT UNIQUE ON CONFLICT IGNORE)";
+    private static final String CREATE_TABLE_MESSAGEDATA = "CREATE TABLE bloomchan (_id INTEGER PRIMARY KEY, created INTEGER, title TEXT, pubDate TEXT, link TEXT, enclosure TEXT, guid TEXT UNIQUE ON CONFLICT IGNORE)";
 
     private static final String CREATE_INDEX_MESSAGEDATA = "CREATE INDEX bloomchan_index ON bloomchan(created, link)";
 

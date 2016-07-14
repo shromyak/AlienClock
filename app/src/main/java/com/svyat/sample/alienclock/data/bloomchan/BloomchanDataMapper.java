@@ -7,7 +7,9 @@ import com.svyat.sample.alienclock.data.AlienModelMapper;
 
 import static com.svyat.sample.alienclock.data.bloomchan.BloomchanDataContract.Bloomchan.*;
 /**
- * Created by MAC on 09.07.16.
+ * Created by shromyak on 09.07.16.
+ *
+ * Base model mapper, bridge between object models and Sqlite cursors
  */
 public class BloomchanDataMapper implements AlienModelMapper<BloomchanDataModel.Item> {
 

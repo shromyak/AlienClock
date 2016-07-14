@@ -51,7 +51,7 @@ public class AlienSettingsManager {
     private void init() {
     }
 
-    public void deinit() {
+    private void deinit() {
     }
 
     public boolean isEmpty() {
@@ -75,7 +75,7 @@ public class AlienSettingsManager {
     public void setSettings(@Nullable ApplicationSettings settings) {
 
         if (settings == null) {
-            this.settings = settings;
+            this.settings = null;
             clearPersistence();
             return;
         }

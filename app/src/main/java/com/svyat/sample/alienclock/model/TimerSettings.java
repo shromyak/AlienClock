@@ -7,6 +7,8 @@ import com.svyat.sample.alienclock.timer.TimerListener;
 
 /**
  * Created by shromyak on 08.07.2016.
+ *
+ * Settings to trigger timer engine
  */
 public class TimerSettings {
 

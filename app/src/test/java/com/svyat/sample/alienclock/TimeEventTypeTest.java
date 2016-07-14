@@ -7,7 +7,9 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by MAC on 09.07.16.
+ * Created by shromyak on 09.07.16.
+ *
+ * Test current timer event type instantiation
  */
 public class TimeEventTypeTest {
 

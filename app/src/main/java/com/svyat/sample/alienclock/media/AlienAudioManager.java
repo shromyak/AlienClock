@@ -7,6 +7,8 @@ import android.content.Context;
  *
  * Responsibility of this class is to listen to events
  * to decorate audio surround
+ *
+ * Is not used yet (implementation is postponed)
  */
 public class AlienAudioManager {
 

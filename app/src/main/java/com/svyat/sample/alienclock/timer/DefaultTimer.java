@@ -10,7 +10,13 @@ import java.util.GregorianCalendar;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
- * Created by MAC on 07.07.16.
+ * Created by shromyak on 07.07.16.
+ *
+ * Default implementation of AlienTimer
+ * @link AlienTimer
+ *
+ * This implemetation uses delegate pattern
+ * @link TimerListener
  */
 public class DefaultTimer implements AlienTimer {
 
@@ -88,7 +94,7 @@ public class DefaultTimer implements AlienTimer {
 
     private void processFireEvent() {
 
-        listener.onTick(isTooLate());
+        listener.onTick();
     }
 
     public void start() {
@@ -101,12 +107,6 @@ public class DefaultTimer implements AlienTimer {
                 scheduleNextFire();
             }
         });
-    }
-
-    private boolean isTooLate() {
-
-        //TODO: check late or in time
-        return false;
     }
 
     private void normalizeInterval() {
@@ -136,5 +136,4 @@ public class DefaultTimer implements AlienTimer {
         handler.removeCallbacksAndMessages(this);
         stop.set(true);
     }
-
 }

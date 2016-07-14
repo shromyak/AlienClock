@@ -17,7 +17,9 @@ import java.util.List;
 import static org.junit.Assert.assertArrayEquals;
 
 /**
- * Created by MAC on 09.07.16.
+ * Created by shromyak on 09.07.16.
+ *
+ * Test main string functionality
  */
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({TextUtils.class})
@@ -33,7 +35,7 @@ public class StringUtilsTest {
 
         List<String> lst = StringUtils.splitCsv(" 1 ,\t 2, 3\t, 4\t\n");
 
-        assertArrayEquals(lst.toArray(new String[0]), new String [] {"1", "2", "3", "4"});
+        assertArrayEquals(lst.toArray(new String[lst.size()]), new String [] {"1", "2", "3", "4"});
     }
 
     @Test

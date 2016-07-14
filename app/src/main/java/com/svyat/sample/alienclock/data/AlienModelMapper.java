@@ -4,7 +4,10 @@ import android.content.ContentValues;
 import android.database.Cursor;
 
 /**
- * Created by MAC on 09.07.16.
+ * Created by shromyak on 09.07.16.
+ *
+ * One leg interface for
+ * Mapper <AlienData, ContentValues>
  */
 public interface AlienModelMapper<T extends AlienData> {
 

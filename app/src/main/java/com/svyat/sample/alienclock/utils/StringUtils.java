@@ -7,7 +7,9 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by MAC on 09.07.16.
+ * Created by shromyak on 09.07.16.
+ *
+ * Helper class to extend functionality of TextUtils
  */
 public class StringUtils {
 

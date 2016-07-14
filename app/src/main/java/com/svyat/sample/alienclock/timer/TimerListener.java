@@ -1,8 +1,10 @@
 package com.svyat.sample.alienclock.timer;
 
 /**
- * Created by MAC on 09.07.16.
+ * Created by shromyak on 09.07.16.
+ *
+ * Interface for alien timer delegates
  */
 public interface TimerListener {
-    void onTick(boolean late);
+    void onTick();
 }

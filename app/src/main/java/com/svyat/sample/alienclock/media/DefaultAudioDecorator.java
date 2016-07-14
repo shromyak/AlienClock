@@ -7,6 +7,11 @@ import com.svyat.sample.alienclock.skin.AudioSkin;
 
 /**
  * Created by shromyak on 07.07.2016.
+ *
+ * Default Implementation of audio decorator based on AudioManager
+ *
+ * For additional explanation please refer
+ * @link AudioDecorator
  */
 public class DefaultAudioDecorator implements AudioDecorator {
 

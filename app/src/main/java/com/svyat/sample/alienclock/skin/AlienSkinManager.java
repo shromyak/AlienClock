@@ -10,6 +10,8 @@ import static com.svyat.sample.alienclock.common.Constants.KEY_THEME_TYPE;
 
 /**
  * Created by shromyak on 07.07.2016.
+ *
+ * Skin is a theme, named as skin to prevent confusing with android themes
  */
 public class AlienSkinManager {
 

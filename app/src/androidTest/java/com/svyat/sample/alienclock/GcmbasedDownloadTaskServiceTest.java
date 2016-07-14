@@ -16,7 +16,9 @@ import com.svyat.sample.alienclock.net.gcmbased.GcmbasedDownloadTaskService;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
- * Created by MAC on 09.07.16.
+ * Created by shromyak on 09.07.16.
+ *
+ * Test downloading task (achieving real data from Internet sources is supported)
  */
 public class GcmbasedDownloadTaskServiceTest extends ServiceTestCase<GcmbasedDownloadTaskService> {
 
@@ -56,6 +58,7 @@ public class GcmbasedDownloadTaskServiceTest extends ServiceTestCase<GcmbasedDow
         parcel.writeStrongBinder(debugMessenger.getBinder());
         PendingCallback callback = new PendingCallback(parcel);
         forceTaskIntent.putExtra("callback", callback);
+        parcel.recycle();
 
         forceTaskIntent.putExtra("tag", Constants.GCM_DOWNLOAD_TASK_TAG);
     }

@@ -8,7 +8,13 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 /**
- * Created by MAC on 09.07.16.
+ * Created by shromyak on 09.07.16.
+ *
+ * interface to control predefined timer
+ * Main idea was to publish trigger events
+ * into application bus, but actually is
+ * used in clock widget controller only
+ * as "part of"
  */
 public interface AlienTimer {
 

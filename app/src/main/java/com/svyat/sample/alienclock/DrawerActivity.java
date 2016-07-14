@@ -2,9 +2,8 @@ package com.svyat.sample.alienclock;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -12,13 +11,23 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import com.svyat.sample.alienclock.alien.AlienActivity;
+import com.svyat.sample.alienclock.alien.AlienIncubator;
+import com.svyat.sample.alienclock.alien.DefaultAlienIncubator;
+import com.svyat.sample.alienclock.controller.AlienController;
 
 public class DrawerActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements AlienActivity, NavigationView.OnNavigationItemSelectedListener {
+
+    AlienController controller;
+    AlienIncubator alienIncubator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_drawer);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -35,11 +44,19 @@ public class DrawerActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+        if (drawer != null) {
+            drawer.addDrawerListener(toggle);
+        }
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        if (navigationView != null) {
+            navigationView.setNavigationItemSelectedListener(this);
+        }
+
+        getSupportActionBar().hide();
+
+        initAlien();
     }
 
     @Override
@@ -97,5 +114,21 @@ public class DrawerActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void initAlien() {
+        getAlienIncubator().visit(this, null);
+    }
+
+    private AlienIncubator getAlienIncubator() {
+        if (alienIncubator == null) {
+            alienIncubator = DefaultAlienIncubator.get(this);
+        }
+        return alienIncubator;
+    }
+
+    @Override
+    public void plantAlien(AlienController controller) {
+        this.controller = controller;
     }
 }

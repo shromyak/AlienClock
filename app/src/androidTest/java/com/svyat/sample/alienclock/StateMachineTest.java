@@ -9,7 +9,9 @@ import com.svyat.sample.alienclock.state.StateMachine;
 import static com.svyat.sample.alienclock.common.Constants.ACTION_APP_START;
 
 /**
- * Created by MAC on 09.07.16.
+ * Created by shromyak on 09.07.16.
+ *
+ * Is state machine is able to start
  */
 public class StateMachineTest extends ServiceTestCase<StateMachine> {
 

@@ -45,7 +45,7 @@ public class AlienAppWidgetConfigureActivity extends Activity {
     }
 
     // Write the prefix to the SharedPreferences object for this widget
-    static void saveTitlePref(Context context, int appWidgetId, String text) {
+    private static void saveTitlePref(Context context, int appWidgetId, String text) {
         SharedPreferences.Editor prefs = context.getSharedPreferences(PREFS_NAME, 0).edit();
         prefs.putString(PREF_PREFIX_KEY + appWidgetId, text);
         prefs.apply();

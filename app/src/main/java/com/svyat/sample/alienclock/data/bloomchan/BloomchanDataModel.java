@@ -18,8 +18,10 @@ import java.util.Locale;
 
 /**
  * Created by shromyak on 07.07.2016.
+ *
+ * Contains all objects describing Bloomberg channel information
+ * In case of promise data extension need to be split into separate classes
  */
-
 public class BloomchanDataModel {
 
     private static final SimpleDateFormat bloomDateFormatter = new SimpleDateFormat("EE, dd MMM yyyy HH:mm:ss z", Locale.ENGLISH);

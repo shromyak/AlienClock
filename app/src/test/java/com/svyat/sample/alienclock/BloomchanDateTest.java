@@ -15,6 +15,7 @@ import org.powermock.modules.junit4.PowerMockRunner;
 /**
  * Created by shromyak on 11.07.2016.
  *
+ * Test date/time conversion for bloomchan
  */
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({TextUtils.class})
@@ -37,7 +38,7 @@ public class BloomchanDateTest {
     }
 
     @Test
-    public void testBloomchanDate_2_isWrongdateChecked() throws Exception {
+    public void testBloomchanDate_2_isWrongDateChecked() throws Exception {
 
         BloomchanDataModel.Item data = new BloomchanDataModel.Item();
         data.pubDate = "08-07-2016T22:07:55+000";

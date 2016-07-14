@@ -80,12 +80,16 @@ public class GcmbasedDownloadTaskService extends GcmTaskService {
         if (StringUtils.contains(tasks, AlienDownloader.DownloaderType.BLOOMCHAN.name())) {
 
             AlienDownloader downloader = getStoppedDownloader(AlienDownloader.DownloaderType.BLOOMCHAN);
-            if (isGetTestRequested()) {
 
-                echoGetTest(downloader.test());
-            } else {
+            if (downloader != null) {
 
-                downloader.start();
+                if (isGetTestRequested()) {
+
+                    echoGetTest(downloader.test());
+                } else {
+
+                    downloader.start();
+                }
             }
         }
     }

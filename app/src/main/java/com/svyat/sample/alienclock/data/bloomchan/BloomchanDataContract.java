@@ -2,6 +2,9 @@ package com.svyat.sample.alienclock.data.bloomchan;
 
 /**
  * Created by shromyak on 07.07.2016.
+ *
+ * Main contract for Content Provider data
+ * Actually contains only Bloomberg channel metadata
  */
 public class BloomchanDataContract {
 
@@ -13,7 +16,7 @@ public class BloomchanDataContract {
 
     public static final class Bloomchan {
 
-        public static final String ID = "_ID";
+        public static final String ID = "_id";
 
         public static final String TITLE = "title";
 
@@ -30,6 +33,7 @@ public class BloomchanDataContract {
 
     public static final String [] PROJECTION = new String[] {Bloomchan.ID, Bloomchan.TITLE, Bloomchan.PUB_DATE, Bloomchan.LINK, Bloomchan.CREATED, Bloomchan.ENCLOSURE, Bloomchan.GUID};
 
+    @SuppressWarnings("unused")
     public static final String REFRESH_CLAUSE = Bloomchan.CREATED + "> ?";
 
     public static final String MIME_TYPE_DIR = "vnd.android.cursor.dir/vnd.svyat.sample.alienclock.bloomchan";

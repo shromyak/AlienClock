@@ -4,7 +4,7 @@ import android.test.ApplicationTestCase;
 import android.test.suitebuilder.annotation.SmallTest;
 
 /**
- * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>
+ * Is application able to start
  */
 public class AlienClockApplicationTest extends ApplicationTestCase<AlienClockApplication> {
 
